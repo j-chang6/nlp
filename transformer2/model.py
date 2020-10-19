@@ -4,7 +4,10 @@ import torch.optim as optim
 import numpy as np
 from config import Config
 from train import *
-import mathclass Encoder(nn.Module):
+import math
+
+
+class Encoder(nn.Module):
 
     def __init__(self, 
                  input_dim, #src_vocab size
