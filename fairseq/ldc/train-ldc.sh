@@ -1,7 +1,7 @@
 num=0,1,2,3
 dropout=0.3
 arch=transformer
-max_tokens=4096
+max_tokens=7500
 criterion=label_smoothed_cross_entropy
 label_smoothing=0.1
 lrscheduler=inverse_sqrt
@@ -30,7 +30,7 @@ CUDA_VISIBLE_DEVICES=$num python fairseq_cli/train.py $data_bin \
             --save-dir $save_dir \
             --log-interval 100 \
             --no-progress-bar \
-            --patience 10 \
+            --patience 20 \
             --eval-bleu \
             --eval-bleu-args '{"beam": 5, "max_len_a": 1.2, "max_len_b": 10}' \
             --eval-bleu-remove-bpe \
